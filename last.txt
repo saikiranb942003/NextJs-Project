@@ -1,0 +1,70 @@
+video - 22, 23
+
+// create next app 
+npx create-next-app@latest my-next-app
+
+
+
+// route groups 
+-> we use () for route groups 
+-> we use come in handy to create a rout group we
+simply wrap the folder name in
+parenthesis so rename o folder add
+parenthesis and O inside it this tells
+next to treat this folder as an
+organizational tool only excluding it from the URL path 
+-> we use parenthesis to avoid that folder name in the url so that withoutt using the folder name in the 
+url by just using the subfolder name we can get the resukts in the url
+// layouts 
+-> pages are route specific ui components
+ -> layout is ui that is shared between mutiple pages in our app such as header and footyer 
+
+// nested layouts 
+
+// mutiple root layout 
+-> route group usses: 
+organise our project structure without affecting urls 
+apply layouts selectively to specific parts of our app  
+
+// seo 
+-> routing metadata 
+-> the metadata api in nextjs is a poweful feature that lets us define metadata for each page 
+-> metadata ensures our content looks great when its shared or indexed by search engines 
+-> two ways to handle metadata in layout.tsx or page.tsx files 
+    -> exporyt statiic metadata object 
+    -> export a dynamic generateMetadata function
+
+configure metadata 
+// metadata rules 
+-> both layout.tsx and page.tsx can export metadata layout metadata applies to all its pages 
+while page metadata is specific to that page 
+-> metadata follows a top down order starting from root level 
+-> when metadata exists in muliple places along the route they merge together with page metadata 
+overridingg layout metadata for matching properties  
+
+// title metadata 
+-> the title feilds primary purpose is to define the document title 
+-> it can be either a string or an object  
+
+// Link component 
+-> for client side naviagtion next.js gives us the <Link> component 
+-> the Link component is a react component that extends the html <a> element and its the 
+primary way to navigate between the routes in next 
+
+// params and searchParams 
+-> for a given url 
+params is a promise that resolves to an object containing the dynamic route parameters 
+-> searchParams is a promise that resolves to an object containing the query paraeters (like fiilters and sorting) 
+-> async and await for server components (they dont support in client components) and use for client components 
+-> while page.tsx has access to both params and searchParams, layout.tsx only has access to params 
+
+// templates 
+-> templates are similar to layouts in that they are also ui shared between multiple pages in our app 
+-> when a user navigates between routes sharing a template we get a complete fresh start 
+    -> a new template component instane is mounted 
+    -> DOM element are recreated 
+    -> state is cleared 
+    -> effects are re-synchronized
+
+
+
