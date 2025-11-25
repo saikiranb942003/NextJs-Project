@@ -1,4 +1,4 @@
-video - , 27, 30,31, 32, 33
+video - , 27, 30,31, 32, 33, 34, 35
 
 // create next app 
 npx create-next-app@latest my-next-app
@@ -109,7 +109,16 @@ not-found.tsx
     -> intercepting routes is an advanced routing mechanism that allows us to load a route from another part of our app 
     within the current layout 
     -> its particularly uselful when we want to display new content while keeping our user in the same context 
-    
+    -> (.) to match segment on the same level 
+    -> (..) to match segment one level above 
+    -> (..)(..) to match segments two levels above 
+    -> (...) to match segemnt from the root app directory 
+
+// route handlers 
+-> the app router lets you create custom request handlers for your routes using a feature called route handlers 
+-> unlike page routes which gives us html content, route handlers let us build RESTful endpoints 
+with complete control over the response 
+-> think of it like building a node and express app 
 
 
 
