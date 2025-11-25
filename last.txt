@@ -1,4 +1,4 @@
-video - 22, 23
+video - , 27, 30,31, 32, 33
 
 // create next app 
 npx create-next-app@latest my-next-app
@@ -65,6 +65,53 @@ params is a promise that resolves to an object containing the dynamic route para
     -> DOM element are recreated 
     -> state is cleared 
     -> effects are re-synchronized
+-> create template by exporting a default react component from a template.js or template.tsx file 
+-> like layouts, templates need to accept a children prop to render the nested route segment 
+
+// different files 
+page.tsxx 
+layout.tsx
+template.tsx
+not-found.tsx
+
+// loading.tsx : 
+-> this file helps us create loading states that users see while waiting for content to load in a specific route segment 
+-> the loading states appear instantly when navigating letting users know that the applicationj is responsive and actively loading content 
+  
+// error handling  
+-> it automatically wraps route segments and their nested children in a React error boundary 
+-> you can create custom error uis for specific segements using the file-system hierarchy 
+-> it isolates errors to affected segements while keeping the rest of our app functional 
+-> it enables you to attempt to recover from an error without requiring a full page reload 
+ 
+ // heirarchy 
+ <layout> 
+    <template> 
+        <ErrorBoundary >
+            <Suspense > 
+                <ErrorBoundary > 
+                    <Page /> 
+
+
+// parallel routes 
+-> parallel routes in next are defined using a feature known as "slots"
+-> slots help organise content in a modular way 
+-> to create a slot we use the '@folder' naming convention 
+-> each defined slot automatically becomes a prop in its corresponding layout.tsx file 
+
+// conditional routes 
+-> imagine we want to show different content based on whether a user logged in or not 
+-> we might want to display a dashboard for authenticated users byt show a login page for those whoe arent 
+
+// advanced routing patterns 
+1. parallel routes 
+2. intercepting routes : 
+    -> intercepting routes is an advanced routing mechanism that allows us to load a route from another part of our app 
+    within the current layout 
+    -> its particularly uselful when we want to display new content while keeping our user in the same context 
+    
+
+
 
 
 
